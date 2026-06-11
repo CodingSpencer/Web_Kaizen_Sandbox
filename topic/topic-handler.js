@@ -21,7 +21,19 @@ async function loadTopicData() {
         document.getElementById('topic-title').textContent = `Day ${dayId}: ${currentDay.title}`;
         document.getElementById('topic-task').textContent = currentDay.task;
         document.getElementById('topic-concept').textContent = currentDay.concept;
-        document.getElementById('topic-code').textContent = currentDay.code;
+        
+        const formattedCode = currentDay.code
+            .replace(/\\n/g, '\n')
+            .replace(/\\\|n/g, '\n');
+            
+        document.getElementById('topic-code').innerHTML = highlightCode(formattedCode);
+        
+        document.title = `Day ${dayId} - ${currentDay.title}`;
+
+        setTimeout(() => {
+            const overlay = document.getElementById('loading-overlay');
+            if (overlay) overlay.classList.add('fade-out');
+        }, 350);
         
         // Update browser tab title dynamically
         document.title = `Day ${dayId} - ${currentDay.title}`;
@@ -54,6 +66,22 @@ async function loadTopicData() {
         <a href="index.html" style="color: #0076ff;">Return to Main Dashboard</a>
         </div>
     `;
+}
+
+function highlightCode(rawCode) {
+    let html = rawCode
+        .replace(/\$3>/g, '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+
+    html = html.replace(/(["'])(.*?)\1/g, '<span class="token-string">$1$2$1</span>');
+    html = html.replace(/(\/\*[\s\S]*?\*\/|\/\/.*)/g, '<span class="token-comment">$1</span>');
+    html = html.replace(/([.#][a-zA-Z0-9_-]+|\bp\b|\bdiv\b|\bspan\b|\bh1\b|\bh2\b|\bbody\b|\bhtml\b)(?=\s*\{)/g, '<span class="token-selector">$1</span>');
+    html = html.replace(/([a-zA-Z0-9_-]+)(?=\s*:)/g, '<span class="token-property">$1</span>');
+    html = html.replace(/\b(function|const|let|var|async|await|return|if|else|try|catch|document|window)\b/g, '<span class="token-keyword">$1</span>');
+
+    return html;
 }
 
 // Run the script on page load

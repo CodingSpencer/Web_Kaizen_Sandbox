@@ -1,0 +1,17 @@
+/* Back Link (Placed outside #topic-area container in HTML) */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-bottom: 1rem;
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.back-link:hover {
+    color: var(--link-hover);
+    transform: translateX(-2px); /* Subtle nudge animation */
+}

@@ -1,0 +1,110 @@
+#topic-area {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+
+    /* Headings styling */
+    h1 {
+        font-size: 1.85rem;
+        font-weight: 800;
+        color: var(--text);
+        letter-spacing: -0.02em;
+        margin-bottom: 0.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--text);
+        margin-top: 1rem;
+        margin-bottom: -0.5rem; /* Pulls content closer smoothly */
+    }
+
+    /* Core Concept Container */
+    .concept-section {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+    }
+
+    /* Task Box Component */
+    .task-box {
+        background: var(--accent-bg);
+        border-left: 4px solid var(--accent);
+        color: var(--text);
+        padding: 1.25rem;
+        margin: 0.5rem 0;
+        border-radius: 0 var(--radius, 8px) var(--radius, 8px) 0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        transition: background-color 0.15s ease, color 0.15s ease;
+    }
+
+    .task-box strong {
+        color: var(--text);
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .task-box p {
+        color: var(--text-muted);
+        margin: 0.5rem 0 0 0;
+        line-height: 1.5;
+        font-size: 0.95rem;
+    }
+
+    /* Responsive Video Component */
+    .video-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* Perfect 16:9 Aspect Ratio */
+        height: 0;
+        overflow: hidden;
+        border-radius: var(--radius, 8px);
+        border: 1px solid var(--border);
+        background: var(--surface);
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Modern Code Block / Terminal Window Design */
+    pre {
+        background: var(--code-bg);
+        border: 1px solid var(--border);
+        padding: 1.25rem;
+        border-radius: var(--radius, 8px);
+        overflow-x: auto;
+    }
+
+    pre code {
+        font-family: 'Fira Code', 'Courier New', Courier, monospace;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        color: var(--code-text);
+        white-space: pre; 
+
+        .token-comment {
+            color: var(--code-comment);
+        }
+
+        .token-keyword, .token-selector {
+            color: var(--code-keyword);
+            font-weight: 600;
+        }
+
+        .token-property {
+            color: var(--code-property);
+        }
+
+        .token-string {
+            color: var(--code-string);
+        }
+    }
+}

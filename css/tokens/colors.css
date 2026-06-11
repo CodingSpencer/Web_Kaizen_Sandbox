@@ -1,0 +1,59 @@
+:root {
+    /* CRITICAL: Tell the browser to support both light and dark modes */
+    color-scheme: light dark;
+
+    /* Core Layout Styles */
+    --bg: light-dark(#f9f8f6, #141412);
+    --surface: light-dark(#ffffff, #1f1e1c);
+    
+    /* Borders */
+    --border: light-dark(#e5e3de, #2e2d2a);
+    --border-hover: light-dark(#ccc9c2, #3e3d39);
+    
+    /* Typography */
+    --text: light-dark(#1a1916, #f0eeea);
+    --text-muted: light-dark(#6b6860, #9e9b94);
+    --text-hint: light-dark(#9e9b94, #6b6860);
+    
+    /* Accents (Blue) */
+    --accent: light-dark(#3a5fd9, #7a9ef0);
+    --accent-bg: light-dark(#eef1fc, #1a2340);
+    
+    /* Success States (Green) */
+    --success: light-dark(#1e7e4a, #5ecb8a);
+    --success-bg: light-dark(#eaf5ee, #0d2a1a);
+    --success-border: light-dark(#a8d9bc, #1e5c36);
+
+    /* Dynamic Link Colors */
+    --link-color: light-dark(#3a5fd9, #7a9ef0);
+    --link-hover: light-dark(#1d3bb3, #a4be3f);
+    --link-done: light-dark(#1e7e4a, #5ecb8a);
+
+    /* Code Example Colors */
+    --code-bg: light-dark(#1e1e1e, #141412);
+    --code-text: light-dark(#dcdcdc, #f0eeea);
+    --code-comment: light-dark(#6a9955, #4e803c);
+    --code-keyword: light-dark(#569cd6, #2b7bc4);
+    --code-property: light-dark(#9cdcfe, #4dc4ff);
+    --code-string: light-dark(#ce9178, #d46e43);
+
+    /* Loading Page Colors */
+    --overlay-bg: light-dark(#ffffff, #141412);
+    --spinner-color: var(--accent, #0076ff);
+    
+    /* Video Element Colors */
+    
+    
+    /* Week Tags */
+    --tag-w1-bg: light-dark(#eef1fc, #1a2340); 
+    --tag-w1: light-dark(#2a47b3, #8aaaf5);
+    
+    --tag-w2-bg: light-dark(#fef3e2, #2a1f08); 
+    --tag-w2: light-dark(#a05c0a, #f0a84a);
+    
+    --tag-w3-bg: light-dark(#eaf5ee, #0d2a1a); 
+    --tag-w3: light-dark(#1e7e4a, #5ecb8a);
+    
+    --tag-w4-bg: light-dark(#f3eefe, #1e1030); 
+    --tag-w4: light-dark(#6030b8, #b08af5);
+}

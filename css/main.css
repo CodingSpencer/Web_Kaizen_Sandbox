@@ -1,0 +1,25 @@
+@layer tokens, base, layout, components, utilities, vendor;
+
+/* TOKENS */
+@import "tokens/colors.css" layer(tokens);
+@import "tokens/variables.css" layer(tokens);
+
+/* BASE */
+@import "base/elements.css" layer(base);
+@import "base/reset.css" layer(base);
+
+/* LAYOUT */
+
+/* COMPONENTS */
+@import "components/day.css" layer(components);
+@import "components/week.css" layer(components);
+@import "components/progress-bar.css" layer(components);
+@import "components/buttons.css" layer(components);
+@import "components/topic.css" layer(components);
+@import "components/header.css" layer(components);
+@import "components/loading-overlay.css" layer(components);
+
+/* UTILITIES */
+@import "utilities/utilities.css" layer(utilities);
+
+/* VENDOR */
